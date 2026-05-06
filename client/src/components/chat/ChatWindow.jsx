@@ -131,9 +131,13 @@ function ChatWindow({ selectedUserId }) {
 
     // ✅ socket listeners
     useEffect(() => {
-        if (!user) return;
+        if (!user?._id) return;
+
+        socket.connect();
 
         socket.emit("join", user._id);
+
+        console.log("JOINED SOCKET ROOM:", user._id);
 
         const handleReceive = async (msg) => {
             if (msg.senderId === selectedUserId) {
@@ -227,6 +231,9 @@ function ChatWindow({ selectedUserId }) {
             socket.off("stopTyping", handleStopTyping);
             socket.off("onlineUsers", handleOnline);
             socket.off("messageDeleted", handleDeleted);
+
+
+            socket.disconnect();
         };
     }, [selectedUserId, user]);
 
