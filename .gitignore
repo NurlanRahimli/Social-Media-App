@@ -1,0 +1,26 @@
+# dependencies
+node_modules
+
+# environment variables
+.env
+client/.env
+server/.env
+
+# build folders
+dist
+build
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
+# Render
+.render

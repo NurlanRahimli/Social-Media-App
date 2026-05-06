@@ -1,0 +1,8 @@
+.swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ec4899; /* your pink */
+}
