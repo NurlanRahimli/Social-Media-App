@@ -6,6 +6,11 @@ function MessageBubble({ msg, onDelete, onEdit }) {
     const { user } = useAuth();
     const [expanded, setExpanded] = useState(false);
 
+
+    console.log("CURRENT USER:", user);
+    console.log("MESSAGE:", msg);
+
+
     const isMe =
         msg.sender === user._id ||
         msg.sender?._id === user._id;
